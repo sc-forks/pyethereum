@@ -24,7 +24,7 @@ TRACE_LVL_MAP = [
     'eth.vm.storage:trace,eth.vm.memory:trace'
 ]
 
-GAS_LIMIT = 3141592
+GAS_LIMIT = 268435455 # 0xfffffff
 GAS_PRICE = 1
 
 # pylint: disable=invalid-name
@@ -181,7 +181,7 @@ class state(object):
         self.blocks = [self.block]
         self.block.timestamp = 1410973349
         self.block.coinbase = DEFAULT_ACCOUNT
-        self.block.gas_limit = 10 ** 9
+        self.block.gas_limit = 10 ** 11
 
     def __del__(self):
         shutil.rmtree(self.temp_data_dir)
